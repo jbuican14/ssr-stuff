@@ -12,4 +12,4 @@ The server folder is where we put all the files
 Use package.json and then run `npm install`
 
 **Usage**
-Use the `npm start` to view the website at your localhost
+Use the `node build/bundle.js` to view the website at your localhost
