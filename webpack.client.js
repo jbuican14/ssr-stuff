@@ -4,7 +4,7 @@ const merge = require('webpack-merge');
 
 const baseConfig = require('./webpack.base');
 
-const config = {
+const clientConfig = {
   // Tell webpack the root file of our server application
   entry: './src/client/client.js',
 
@@ -16,4 +16,4 @@ const config = {
   },
 };
 
-module.exports = merge(baseConfig, config);
+module.exports = merge(baseConfig, clientConfig);

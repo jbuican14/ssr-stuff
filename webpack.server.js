@@ -1,9 +1,10 @@
 const path = require('path');
 const merge = require('webpack-merge');
+const webpackNodeExternals = require('webpack-node-externals');
 
 const baseConfig = require('./webpack.base.js');
 
-const config = {
+const serverConfig = {
   // Inform webpack that we are building a bundle for
   // nodeJS rather than for the browser
   target: 'node',
@@ -17,6 +18,10 @@ const config = {
     filename: 'bundle.js',
     path: path.resolve(__dirname, 'build'),
   },
+
+  // Tell webpack to not include anything that is inside node_modules
+  // So the run time is faster
+  externals: [webpackNodeExternals()],
 };
 
-module.exports = merge(baseConfig, config);
+module.exports = merge(baseConfig, serverConfig);
